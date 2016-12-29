@@ -19,10 +19,11 @@ $(TEST_PREFIX)/example.o: test_example.cpp
 
 .PHONY: clean
 clean:
-	rm $(foreach test, $(TESTS), $(TEST_PREFIX)/$(addsuffix .o, $(test)))
+	-rm $(foreach test, $(TESTS), $(TEST_PREFIX)/$(addsuffix .o, $(test)))
 
 .PHONY: run_all
-run_all: all_tests
+run_all: all_tests	
 	for test in $(TESTS); do \
-		echo "Running $$test"; $(TEST_PREFIX)/$$test.o || exit 1; \
+		echo "[[ Running test $$test ]]"; \
+		$(TEST_PREFIX)/$$test.o; \
 	done	
