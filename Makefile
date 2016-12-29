@@ -27,9 +27,15 @@ GSL_PATH:=$(BASE)/deps/GSL
 
 CXX_FLAGS +=-I$(GSL_PATH)/
 
-export CXX CXX_FLAGS BUILD_TEST_PATH CATCH_PATH
+# Other options
+OUTPUT_NAME:=modern_template
+
+export CXX CXX_FLAGS BUILD_TEST_PATH BUILD_BIN_PATH CATCH_PATH OUTPUT_NAME
 ## TARGETS
-# Tests
+.PHONY: app 
+app: | $(BUILD_BIN_PATH)
+	$(MAKE) -C src/ build
+
 .PHONY: tests
 tests: | $(BUILD_TEST_PATH)
 	$(MAKE) -C tests/ all_tests
@@ -40,5 +46,7 @@ run_tests:
 
 .PHONY: clean
 # 1. Clean the built tests
+# 2. Clean the built application
 clean:	
 	$(MAKE) -C tests/ clean
+	$(MAKE) -C src/ clean
