@@ -18,5 +18,5 @@ $(BUILD_PREFIX)/main.o: main.cpp
 
 .PHONY: clean
 clean:
-	rm $(OBJECT_FILE_PATHS)
-	rm $(BUILD_PREFIX)/$(OUTPUT_NAME)
+	-rm $(OBJECT_FILE_PATHS)
+	-rm $(BUILD_PREFIX)/$(OUTPUT_NAME)
