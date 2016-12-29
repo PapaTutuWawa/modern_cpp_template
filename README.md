@@ -8,6 +8,11 @@ C++ Application Template
 
 Usage
 ===
+Build the main application (Specified in src/Makefile)
+```
+$ make app
+```
+
 Build the tests (Specified in tests/Makefile)
 ```
 $ make tests
@@ -22,3 +27,4 @@ Delete all compiled files
 ```
 $ make clean
 ```
+
