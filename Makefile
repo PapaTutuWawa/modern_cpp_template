@@ -11,13 +11,13 @@ BUILD_TEST_PATH:=$(BUILD_DIR)/$(BUILD_TEST_DIR)
 BUILD_BIN_PATH:=$(BUILD_DIR)/$(BUILD_BIN_DIR)
 
 $(BUILD_DIR):
-	mkdir $(BUILD_DIR)
+	-mkdir $(BUILD_DIR)
 
 $(BUILD_TEST_PATH): | $(BUILD_DIR)
-	mkdir $(BUILD_TEST_PATH)
+	-mkdir $(BUILD_TEST_PATH)
 
 $(BUILD_BIN_PATH): | $(BUILD_DIR)
-	mkdir $(BUILD_BIN_PATH)
+	-mkdir $(BUILD_BIN_PATH)
 
 # Paths
 BASE:=$(shell pwd)
