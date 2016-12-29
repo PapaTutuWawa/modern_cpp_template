@@ -1,0 +1,9 @@
+[submodule "deps/Catch"]
+	path = deps/Catch
+	url = https://github.com/philsquared/Catch.git
+[submodule "deps/loguru"]
+	path = deps/loguru
+	url = https://github.com/emilk/loguru.git
+[submodule "deps/GSL"]
+	path = deps/GSL
+	url = https://github.com/Microsoft/GSL.git
